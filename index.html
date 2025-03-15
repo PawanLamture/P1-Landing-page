@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger King</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+   <header>
+    <div class="navber">
+        <img src="logo.png" alt="Burger King Logo">
+
+        <div class="center-nav">
+        <a href="">Home</a>
+        <a href="">Menu</a>
+        <a href="">About</a>
+        <a href="">Shop</a>
+    </div>
+      <div class="social">
+        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href=""><i class="fa-solid fa-cart-plus"></i></a>
+        <a href=""><i class="fa-solid fa-house"></i></a>
+      </div>
+    </div>
+    <div class="text">
+      <h1>THE ULTIMATE <BR>BURGER HAUEM</h1>
+        <p>"Welcome to Burger King – Home of the Whopper! Indulge in flame-grilled perfection with our juicy burgers, crispy fries, and refreshing drinks. Whether you're craving a classic Whopper, a delicious chicken sandwich, or a mouthwatering plant-based option, we've got something for everyone. </p>
+        <a href="" class="btn">Order Now</a>
+        <a href="" class="btn">View more</a>
+    </div>
+
+    <div class="burger">
+      <img src="burger.png" alt="">
+      <img src="pngwing.com (12).png" alt="">
+      <img src="buger2.png" alt="">
+      <img src="Flying Burger PNG Image - 2084x2084.png" alt="">
+      <img src="pngwing.com (16).png" alt="">
+
+    </div>
+
+    <div class="burger-toggle">
+      <img src="Flying Burger PNG Image - 2084x2084.png" alt="" class="active">
+
+    </div>
+
+   </header>
+<script>
+  const burgerImages = document.querySelectorAll('.burger img');
+  const toggleImages = document.querySelectorAll('.burger-toggle img');
+  let currentIndex = 0;
+
+  toggleImages[currentIndex].classList.add('active');
+
+  burgerImages.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      toggleImages.forEach(toggleImg => toggleImg.classList.remove('active'));
+      toggleImages[currentIndex].classList.add('active');
+      toggleImages[currentIndex].src = burgerImages[index].src;
+      currentIndex = (currentIndex + 1) % toggleImages.lengt;
+    });
+  });
+</script>
+   
+</body>
+</html>
